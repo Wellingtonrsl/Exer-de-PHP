@@ -103,8 +103,23 @@ function geradorNumeroAleatorio(int $final): int{
     
     echo "Foram registradas  {$totalGerador} dessas pessoas {$generoM} são do genero Masculino, {$pessoaComIdadeMaior20} possui idade acima de 20 anos e {$pessoaComIdadeMaior50} tem idade acima de 50 anos<br>";
     
-    echo "<br>Lista de Pessoas<br>";
-    var_dump($arrPessoaComIdadeMaior20);
+    //echo "<br>Lista de Pessoas<br>"; var_dump($arrPessoaComIdadeMaior20);
+
+ foreach ($arrPessoaComIdadeMaior20 as $p) {
+
+    $str = '';
+    $str .= "<div class='pessoa'>
+    <span class='nome'>".$p['nome']."</span>
+    <span class='genero'>".$p['genero']."</span>
+    <span class='idade'>".$p['idade']."</span>
+     <span class='profissao'>".$p['profissao']."</div>
+    </div>";
+
+    echo $str;
+ }
+
+
+ echo '<style>.pessoa{width: 400px; height: 20px; border: 1px solid #000} span{ display: inline-block; text-align: center; min-width:80px; border-left: 1px solid  #000 }</style>';
 
     ?>
     </table>
